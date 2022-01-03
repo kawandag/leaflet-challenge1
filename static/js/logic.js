@@ -17,6 +17,14 @@ var Stamen_TonerLite = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/to
 	ext: 'png'
 });
 
+var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 18,
+	ext: 'png'
+});
+
 var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
@@ -32,7 +40,9 @@ var USGS_USImageryTopo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/res
 let basemap = {
     Satellite: defaultMap,
     GrayScale: CartoDB_Positron,
-    Topology: USGS_USImageryTopo
+    Topology: USGS_USImageryTopo,
+    Terrain: Stamen_Terrain
+    
 };
 
 //map object
@@ -40,7 +50,7 @@ let basemap = {
 var myMap = L.map("map", {
     center: [36.7783, -119.4179],
     zoom: 3,
-    layers: [defaultMap, CartoDB_Positron, USGS_USImageryTopo] //toggle and map style
+    layers: [defaultMap, CartoDB_Positron, USGS_USImageryTopo, Stamen_Terrain] //toggle and map style
 });
 
 
