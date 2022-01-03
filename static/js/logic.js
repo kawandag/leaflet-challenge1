@@ -99,7 +99,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
                 opacity: 1, 
                 fillOpacity: 1, 
                 fillColor: colorWheel(feature.geometry.coordinates[2]), //index 2 is where depth is shown
-                color: "000000",
+                color: "black",
                 radius: radiusSize(feature.properties.mag), //need the magnitude
                 weight: 0.5
                 
