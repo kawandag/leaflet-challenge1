@@ -42,7 +42,7 @@ First task was to visualize an earthquake data set.
 
 - - -
 
-![greyscaleMap](Images/greyscaleMap.png)
+![greyMap](Images/greyMap.png)
 
 ### Level 2: More Data
 
